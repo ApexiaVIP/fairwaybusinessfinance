@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const fundingDetails: Record<string, { title: string; content: string[] }> = {
   "confidential-invoice-discounting": {
