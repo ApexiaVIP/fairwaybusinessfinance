@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 const fundingDetails: Record<string, { title: string; content: string[] }> = {
   "confidential-invoice-discounting": {
@@ -100,31 +101,59 @@ const FundingDetail = () => {
 
   return (
     <div>
-      <section className="bg-primary py-16">
-        <div className="container mx-auto px-4 lg:px-8">
-          <Link to="/funding-options" className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-secondary mb-4 text-sm">
-            <ArrowLeft className="w-4 h-4" /> Funding Options
-          </Link>
-          <h1 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground">{detail.title}</h1>
-          <div className="w-16 h-1 bg-secondary mt-4" />
+      {/* Hero */}
+      <section className="relative gradient-hero py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0 pattern-dots opacity-20" />
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
+            <Link
+              to="/funding-options"
+              className="inline-flex items-center gap-2 text-primary-foreground/60 hover:text-secondary mb-5 text-sm transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" /> Back to Funding Options
+            </Link>
+          </motion.div>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground"
+          >
+            {detail.title}
+          </motion.h1>
         </div>
       </section>
 
-      <section className="py-16 md:py-20">
+      {/* Content */}
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 lg:px-8 max-w-3xl">
           <div className="space-y-6">
             {detail.content.map((p, i) => (
-              <p key={i} className="text-foreground/80 leading-relaxed text-lg">{p}</p>
+              <motion.p
+                key={i}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="text-foreground/75 leading-relaxed text-lg"
+              >
+                {p}
+              </motion.p>
             ))}
           </div>
-          <div className="mt-12">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-12"
+          >
             <Link
               to="/contact-us"
-              className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-md font-bold hover:opacity-90 transition-opacity"
+              className="inline-flex items-center gap-2 gradient-gold text-secondary-foreground px-8 py-3.5 rounded-xl font-bold hover:shadow-lg hover:shadow-secondary/25 transition-all"
             >
               Get in touch to discuss <ArrowRight className="w-4 h-4" />
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>
