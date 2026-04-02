@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 220 20% 97%;
     --foreground: 215 25% 17%;
 
     --card: 0 0% 100%;
@@ -18,23 +18,23 @@
     --primary: 215 60% 22%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 47 100% 50%;
-    --secondary-foreground: 215 60% 22%;
+    --secondary: 45 100% 51%;
+    --secondary-foreground: 215 60% 15%;
 
-    --muted: 210 20% 96%;
+    --muted: 220 14% 93%;
     --muted-foreground: 215 10% 45%;
 
-    --accent: 47 100% 50%;
-    --accent-foreground: 215 60% 22%;
+    --accent: 215 50% 30%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214 20% 90%;
-    --input: 214 20% 90%;
+    --border: 220 13% 88%;
+    --input: 220 13% 88%;
     --ring: 215 60% 22%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -47,9 +47,6 @@
 
     --font-heading: 'Playfair Display', serif;
     --font-body: 'DM Sans', sans-serif;
-
-    --hero-gradient: linear-gradient(135deg, hsl(215 60% 22%) 0%, hsl(215 45% 32%) 100%);
-    --cta-gradient: linear-gradient(135deg, hsl(47 100% 50%) 0%, hsl(42 100% 55%) 100%);
   }
 
   .dark {
@@ -59,14 +56,14 @@
     --card-foreground: 210 40% 98%;
     --popover: 215 25% 12%;
     --popover-foreground: 210 40% 98%;
-    --primary: 47 100% 50%;
-    --primary-foreground: 215 60% 22%;
+    --primary: 45 100% 51%;
+    --primary-foreground: 215 60% 15%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 47 100% 50%;
-    --accent-foreground: 215 60% 22%;
+    --accent: 45 100% 51%;
+    --accent-foreground: 215 60% 15%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
     --border: 217.2 32.6% 17.5%;
@@ -87,5 +84,51 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-card/70 backdrop-blur-xl border border-border/50;
+  }
+
+  .glass-dark {
+    background: hsla(215, 60%, 22%, 0.85);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsla(0, 0%, 100%, 0.1);
+  }
+
+  .gradient-hero {
+    background: linear-gradient(
+      160deg,
+      hsl(215 60% 18%) 0%,
+      hsl(215 50% 25%) 40%,
+      hsl(215 45% 30%) 100%
+    );
+  }
+
+  .gradient-gold {
+    background: linear-gradient(135deg, hsl(45 100% 51%), hsl(38 100% 56%));
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(45 100% 51%), hsl(38 100% 56%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .pattern-dots {
+    background-image: radial-gradient(circle, hsl(215 60% 22% / 0.06) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -12px hsl(215 60% 22% / 0.15);
   }
 }
