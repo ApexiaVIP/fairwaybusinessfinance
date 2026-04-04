@@ -228,7 +228,7 @@ const HomePage = () => {
       </section>
 
       {/* Funders */}
-      <section className="py-20 md:py-28">
+      <section className="py-20 md:py-28 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
             initial="hidden"
