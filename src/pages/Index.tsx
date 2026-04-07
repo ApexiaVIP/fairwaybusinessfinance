@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Users, Briefcase, TrendingUp, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 
+import heroBg from "@/assets/hero-bg.jpg";
 import aldermore from "@/assets/funders/aldermore.jpg";
 import ultimate from "@/assets/funders/ultimate.png";
 import catalyst from "@/assets/funders/catalyst.jpeg";
@@ -54,8 +55,11 @@ const HomePage = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero */}
-      <section className="relative gradient-hero min-h-[85vh] flex items-center">
-        <div className="absolute inset-0 pattern-dots opacity-20" />
+      <section className="relative min-h-[85vh] flex items-center">
+        <div className="absolute inset-0">
+          <img src={heroBg} alt="" className="w-full h-full object-cover" width={1920} height={1080} />
+          <div className="absolute inset-0 gradient-hero opacity-80" />
+        </div>
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10 py-20">
           <div className="max-w-3xl">
