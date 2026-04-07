@@ -58,7 +58,7 @@ const HomePage = () => {
       <section className="relative min-h-[85vh] flex items-center">
         <div className="absolute inset-0">
           <img src={heroBg} alt="" className="w-full h-full object-cover" width={1920} height={1080} />
-          <div className="absolute inset-0 gradient-hero opacity-80" />
+          <div className="absolute inset-0 gradient-hero opacity-50" />
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10 py-20">
