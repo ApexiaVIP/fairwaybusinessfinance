@@ -69,12 +69,23 @@ const Footer = () => {
             <div className="space-y-4">
               <h4 className="font-heading text-lg font-bold text-background mb-2">Legal</h4>
               <p className="text-sm text-background/50 leading-relaxed">
+                We work with a panel of lenders whose particulars will be supplied upon request, to find a suitable funding option.
+              </p>
+              <p className="text-sm text-background/50 leading-relaxed">
                 We are registered with the ICO, ZA309916 and you can check via{" "}
                 <a href="https://www.ico.org.uk" target="_blank" rel="noopener noreferrer" className="underline hover:text-secondary transition-colors">
                   www.ico.org.uk
                 </a>
-                . We may receive commissions that will vary depending on the lender, product or other permissible
+                . We will receive commissions that will vary depending on the lender, product or other permissible
                 factors. The nature of any commission model will be confirmed to you before you proceed.
+              </p>
+              <p className="text-sm text-background/50 leading-relaxed">
+                Fairway Business Finance is a trading style of Fairway Business Finance Limited, registered at Unit 26 Edward Court, Broadheath, Altrincham WA14 5GL. Fairway Business Finance Limited is not authorised by the Financial Conduct Authority and can only complete non regulated introductions.
+              </p>
+              <p className="text-sm">
+                <Link to="/privacy-notice" className="text-secondary underline hover:text-secondary/80 transition-colors">
+                  Privacy Notice
+                </Link>
               </p>
             </div>
           </div>

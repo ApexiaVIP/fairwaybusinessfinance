@@ -10,6 +10,7 @@ import FundingOptions from "./pages/FundingOptions";
 import FundingDetail from "./pages/FundingDetail";
 import OurTeam from "./pages/OurTeam";
 import ContactUs from "./pages/ContactUs";
+import PrivacyNotice from "./pages/PrivacyNotice";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App = () => (
               <Route path="/funding-options/:slug" element={<FundingDetail />} />
               <Route path="/our-team" element={<OurTeam />} />
               <Route path="/contact-us" element={<ContactUs />} />
+              <Route path="/privacy-notice" element={<PrivacyNotice />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
