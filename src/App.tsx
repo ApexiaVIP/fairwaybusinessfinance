@@ -30,6 +30,7 @@ const App = () => (
               <Route path="/funding-options/:slug" element={<FundingDetail />} />
               <Route path="/our-team" element={<OurTeam />} />
               <Route path="/contact-us" element={<ContactUs />} />
+              <Route path="/privacy-notice" element={<PrivacyNotice />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
