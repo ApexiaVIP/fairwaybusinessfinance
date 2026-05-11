@@ -10,6 +10,7 @@ import FundingOptions from "./pages/FundingOptions";
 import FundingDetail from "./pages/FundingDetail";
 import OurTeam from "./pages/OurTeam";
 import ContactUs from "./pages/ContactUs";
+import PrivacyNotice from "./pages/PrivacyNotice";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
